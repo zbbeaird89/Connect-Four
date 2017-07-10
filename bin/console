@@ -1,14 +1,19 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "connect_four"
+require "connect_four.rb"
+require "pry"
 
-# You can add fixtures and/or initialization code here to make experimenting
-# with your gem easier. You can also use a different console, if you like.
 
-# (If you use this, don't forget to add pry to your Gemfile!)
-# require "pry"
-# Pry.start
+player1 = ConnectFour::Player.new(:name => "Zach", :symbol => "\u2776".encode("utf-8"))
 
-require "irb"
-IRB.start
+player2 = ConnectFour::Player.new(:name => "Lauren", :symbol => "\u2777".encode("utf-8"))
+
+players = [player1, player2]
+
+board = ConnectFour::Board.new
+
+game = ConnectFour::Game.new(board, players)
+
+Pry.start(game)
+

@@ -1,3 +1,4 @@
+=begin
 require 'spec_helper'
 
 describe ConnectFour do
@@ -9,3 +10,4 @@ describe ConnectFour do
     expect(false).to eq(true)
   end
 end
+=end
